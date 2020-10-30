@@ -1,0 +1,221 @@
+.component-draw-tools {
+  position: relative;
+  font-size: 14px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 350px;
+}
+.component-draw-tools .component-draw-tools-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a3b4cc;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.component-draw-tools .component-draw-tools-info div {
+  cursor: pointer;
+}
+.component-draw-tools .component-draw-tools-info span {
+  display: inline-block;
+  margin-right: 4px;
+}
+.component-draw-tools .component-draw-tools-info img {
+  height: 14px;
+  width: 14px;
+  vertical-align: middle;
+}
+.component-draw-tools .component-draw-tools-info img.animate {
+  -webkit-animation: spin 4s infinite linear;
+          animation: spin 4s infinite linear;
+}
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.component-draw-tools canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  touch-action: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+.component-draw-tools canvas.image-canvas {
+  z-index: 10;
+}
+.component-draw-tools canvas.upper-canvas {
+  z-index: 20;
+}
+.component-draw-tools .correct-input-component {
+  position: absolute;
+  font-family: 'SimHei';
+  background: transparent;
+  width: 200px;
+  z-index: 9999;
+}
+.component-draw-tools .correct-input-component textarea {
+  box-sizing: border-box;
+  padding: 0 5px;
+  min-height: 44px;
+  width: 200px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #ff6337;
+  background: #fff;
+  border: 1px solid #ff7d71;
+  border-radius: 2px;
+  resize: none;
+  outline: none;
+}
+.component-draw-tools .correct-input-component textarea::-webkit-input-placeholder {
+  color: #999;
+}
+.component-draw-tools .correct-input-component textarea::-moz-placeholder {
+  color: #999;
+}
+.component-draw-tools .correct-input-component textarea:-ms-input-placeholder {
+  color: #999;
+}
+.component-draw-tools .correct-input-component textarea::-ms-input-placeholder {
+  color: #999;
+}
+.component-draw-tools .correct-input-component textarea::placeholder {
+  color: #999;
+}
+.component-draw-tools .correct-input-component ul {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-height: 190px;
+  width: 100%;
+  text-align: left;
+  list-style: none;
+  border-radius: 6px;
+  box-shadow: 0px 2px 4px 0px rgba(51, 51, 51, 0.1);
+  border: 1px solid #f0f0f0;
+  overflow: auto;
+}
+.component-draw-tools .correct-input-component li {
+  box-sizing: border-box;
+  padding-left: 10px;
+  height: 30px;
+  line-height: 30px;
+  color: #666;
+  background: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.component-draw-tools .correct-input-component li:hover {
+  background: #eaefff;
+}
+.component-draw-tools .correct-input-component li span {
+  color: #ff6337;
+}
+
+.component-draw-tools .component-draw-tool-text-style-popup {
+  position: absolute;
+  z-index: 30;
+  display: flex;
+  box-sizing: border-box;
+  padding: 3px 5px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.component-draw-tools .component-draw-tool-text-style-popup::after {
+  clear: both;
+  display: block;
+  content: '';
+  visibility: hidden;
+  height: 0;
+}
+
+.component-draw-tools .component-draw-tool-text-style-popup-font-box {
+  float: left;
+  margin-right: 6px;
+  font-size: 14px;
+  width: 30px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.component-draw-tools .component-draw-tool-text-style-popup-font-item {
+  height: 20px;
+  line-height: 20px;
+  background-color: #ffffff;
+}
+
+.component-draw-tools .component-draw-tool-text-style-popup-font-item:hover {
+  background-color: #d9d9d9;
+}
+
+.component-draw-tools .component-draw-tool-text-style-popup .component-draw-tool-text-style-color {
+  float: left;
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* button styles*/
+.correct-button {
+  padding: 5px 16px;
+  border-radius: 2px;
+  line-height: 22px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  transition: all 0.3s;
+  word-break: keep-all;
+}
+.correct-button.disabled {
+  background: rgba(240,241,242,1) !important;
+  color: #C2C6CC !important;
+}
+.correct-button.default {
+  border: 1px solid rgba(230,232,235,1);
+  color: rgba(40,47,56,1);
+  background-color: #fff;
+}
+.correct-button.primary {
+  background-color: #3370FF;
+  color: #FFFFFF;
+}
+.correct-button.primary:hover {
+  background-color: #6694ff;
+}
+.correct-button.default:hover {
+  border: 1px solid #6694ff;
+  color: #6694ff;
+}
+
+.graffitiPop.byted-edu-popover-inner-content {
+  padding: 0px;
+}
